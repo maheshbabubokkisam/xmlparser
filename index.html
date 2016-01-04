@@ -1,0 +1,43 @@
+<!DOCTYPE html>  
+ <html>  
+	<head>
+		<title>Quiz XML Parser</title>	
+ 
+		<style type="text/css">  
+           div#options input{
+                  margin-left: 15px;    
+           }  
+           ul{  
+				list-style-type: none;  
+           }
+           div#wrapper{  
+                  width: 500px;    
+                  background-color: #FAFAFA;  
+                  padding: 10px;  
+                  padding-bottom: 35px;  
+           }  
+           #nextButton{  
+                  float:right;  
+                  width: 100px;  
+                  height: 25px;  
+           }  
+      </style>  
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="mainjs.js"></script>  
+      </head>  
+		<body onload="UITest1()">  
+			<div id="wrapper">  
+				<div id="question"></div>  
+				<br />
+				<ul id="options"></ul> 
+				<button id="nextButton" onclick="FunNextNode()">Next</button>  
+			</div>
+			<br />  
+			<center>
+				<div id="result" style="display:none;height:200px;width:500px;background-color:rgb(152, 173, 240)">
+				&nbsp;&nbsp;&nbsp; No of Questions : <div id="noofques"></div><br />
+				&nbsp;&nbsp;&nbsp; No of Correct Answers : <div id="noofcorans"></div>
+				</div>
+			</center>
+		</body>
+ </html>

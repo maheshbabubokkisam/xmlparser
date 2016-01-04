@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Quiz XML Parser</title>	
+</head>
+<body>
+	<div class="spmArr"></div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+		var quizXML = '<quiz><Sporsmal tekst="bla bla bla"/><alternativer><tekst>bla</tekst><tekst>bli</tekst><tekst correct="yes">ble</tekst></alternativer><Sporsmal tekst="More blah"/><alternativer><tekst>bla bla</tekst><tekst correct="yes">bli bli</tekst><tekst>ble ble</tekst></alternativer></quiz>'
+
+		var quizDOM = $.parseXML(quizXML);
+		$xml = $(quizDOM);
+		
+		$xml.find('quiz > Sporsmal').each(function() {
+			var sporsmalTekst = $(this).attr('tekst');
+			var qDiv = $("<div />").addClass("item").addClass("sporsmal").appendTo($(".spmArr"));
+			var sTekst = $("<h2/>").html(sporsmalTekst).appendTo(qDiv);
+		});
+	</script>
+</body>
+</html>
